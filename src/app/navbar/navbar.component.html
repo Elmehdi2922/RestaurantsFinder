@@ -1,0 +1,26 @@
+<br><br><br>
+<nav class="navbar navbar-light bg-light justify-content-between">
+    <a class="navbar-brand">
+        <strong class="text-primary font-italic">Restaurants</strong><strong class="font-italic">Finder</strong>
+    </a>
+    
+    <form class="form-inline" [formGroup]="searchForm" (ngSubmit)="all()">
+        <input 
+            class="form-control mr-sm-2" 
+            type="search" placeholder="Name" 
+            aria-label="Search"
+            (keypress)="searchRestaurant()"
+            formControlName="name">
+        <input 
+            class="form-control mr-sm-2" 
+            type="search" 
+            placeholder="Address" 
+            aria-label="Search"
+            (keypress)="searchRestaurant()"
+            formControlName="address">
+        <button 
+            class="btn btn-outline-primary my-2 my-sm-0" 
+            type="submit">All</button>
+ 
+    </form>
+</nav>

@@ -1,0 +1,36 @@
+<div id="div" *ngIf="show">
+</div>
+<div id="div-content" *ngIf="show">
+    <img src="./assets/success.png" alt="">
+    <h2>Connected</h2>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="col-4">
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <label id="label">
+                    <strong class="text-primary font-italic">Restaurants</strong><strong
+                        class="font-italic">Finder</strong>
+                </label>
+                <form [formGroup]="authForm" (ngSubmit)="connect()">
+                    <div class="form-group">
+                        <label for="email">Login</label>
+                        <input type="email" class="form-control form-control-sm" id="login" formControlName="login" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control form-control-sm" id="pass" formControlName="pass" required>
+                    </div>
+                    <button type="submit" class="btn btn-sm btn-primary btn-block"
+                        [disabled]="authForm.invalid">Connexion</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

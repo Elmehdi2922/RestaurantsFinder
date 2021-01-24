@@ -1,0 +1,26 @@
+<div class="list-group">
+    <a class="list-group-item list-group-item-action active">
+        Restaurants
+        <div class="float-right">
+                <button type="button" class="btn btn-success btn-sm"(click)="onClick('add',restaurant)">Add</button>
+        </div>
+    </a>
+    <a class="list-group-item list-group-item-action"  
+       *ngFor="let restaurant of restaurants">
+        <div class="d-flex w-100 justify-content-between"
+             (click)="onClick('select',restaurant)"
+             id="div">
+
+            <h5 class="mb-1">{{restaurant.name}}</h5>
+            <small>cuisine {{restaurant.cuisine}}</small>
+        </div>
+        <p class="mb-1">{{restaurant.street}} ,{{restaurant.borough}}</p>
+        <small>{{getStars(restaurant.score)}}</small>&nbsp;&nbsp;
+
+        <small><button type="button" class="btn btn-outline-warning btn-sm" (click)="onClick('edit',restaurant)">Edit</button></small>&nbsp;
+        <small><button type="button" class="btn btn-outline-danger btn-sm" (click)="onClick('delete',restaurant)">Delete</button></small>
+    </a>
+    
+    <div class="loader" *ngIf="restaurants.length==0">Loading...</div>
+    <br>
+</div>

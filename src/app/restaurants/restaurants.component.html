@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row mx-md-n5">
+        <div class="col">
+            <!--Recherche-->
+            <app-navbar (searchRestau)="searchRestaurant($event)"></app-navbar>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <div class="row mx-md-n5 ">
+        <div class="col">      
+            <div class="row mx-md-n5 ">
+                <div class="col-5">
+                    <!--debut Tableau -->
+                    <app-list 
+                        [restaurants]="restaurants"  
+                        (selectedRestaurant)="onSelectedRestaurant($event)">                        
+                    </app-list>   
+                    <div class="d-flex justify-content-between p-2">
+                        <!-- nombre des page-->
+                        <ngb-pagination 
+                            [collectionSize]="collectionSize" 
+                            [(page)]="page" 
+                            [pageSize]="pageSize"
+                            (pageChange)="refreshRestaurantsPaginated()">
+                        </ngb-pagination>
+                        <!-- nombre des elements par page-->
+                        <select class="custom-select" 
+                                style="width: auto" 
+                                [(ngModel)]="pageSize" 
+                                (ngModelChange)="refreshRestaurantsPaginated()">
+                                    <option [ngValue]="2">2 items</option>
+                                    <option [ngValue]="4">4 items</option>
+                                    <option [ngValue]="6">6 items</option>
+                        </select>
+                    </div>
+                    <!--Fin Tableau  -->
+                </div>
+                <div class="col">
+                    <br>
+                    <!-- debut Map -->
+                    <app-map [restaurants]="mapRestaurants" 
+                             [lat]="lat" 
+                             [lng]="lng" 
+                             [zoom]="zoom">
+                    </app-map>
+                    <!-- fin Map -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+#div{
+    position: absolute; 
+    top:0px; 
+    bottom:0px; 
+    width: 100%;
+    background-color: rgba(121, 179, 255, 0.212);
+    /*opacity: 40%;*/
+}
+#div-content{
+    position: absolute; 
+    text-align: center;
+    margin-top: 250px;
+    margin-left: 28%;
+    margin-right: auto; 
+    width: 40%;
+    z-index: 5;
+}
+img{
+    width: 20%;
+    z-index: 5;
+}
+.container{
+    margin-top: 20%;
+    margin-left: 100%;
+} 
+#label{
+     margin-left: 34%;
+     margin-top: 5%;
+     margin-bottom: 10%;
+}

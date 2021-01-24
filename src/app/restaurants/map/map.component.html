@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="card"> 
+        <div class="card-body" >
+            <agm-map 
+                [latitude]="lat" 
+                [longitude]="lng" 
+                [zoom]="zoom" 
+                [disableDefaultUI]="false" >
+
+                <agm-marker 
+                    *ngFor="let restaurant of restaurants"
+                    [latitude]="+restaurant.lat"
+                    [longitude]="+restaurant.lng" 
+                    [label]="restaurant.grade" 
+                    [markerDraggable]="false">
+
+                    <agm-info-window [ngStyle]="{'background-image': 'url(restaurant.url)'}">
+                        <div class="container">
+                            <div class="row">
+
+                                <img [src]="restaurant.url" alt="background">
+                                <div class="col">
+                                 
+                                    <h2>{{restaurant.name}}</h2>
+                                    {{getStars(restaurant.score)}} <br><br>
+                                    <button 
+                                        type="button" 
+                                        class="btn btn-primary btn-sm"
+                                        (click)="seeMore(restaurant)">see more...</button>
+                                </div>
+                            </div>
+                        </div>
+                    </agm-info-window>
+                </agm-marker>
+            </agm-map>
+        </div> 
+    </div>
+</div>
