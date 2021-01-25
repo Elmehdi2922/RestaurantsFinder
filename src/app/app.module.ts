@@ -33,7 +33,7 @@ import { AuthGuard } from './services/auth-guard.service';
     AppRoutingModule,
     HttpClientModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyCmU70DP_yg1U2vVsjiQj5btcWmQC6d5Nc'
+      apiKey: 'MyMapGoogleKey'
     }),
     ReactiveFormsModule,
     FormsModule,
